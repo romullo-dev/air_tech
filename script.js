@@ -1,11 +1,16 @@
-// Atualiza o ano automaticamente no rodapé
 const currentYear = document.getElementById("currentYear");
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
 }
 
-// Animações leves ao rolar usando IntersectionObserver
-const animatedSections = document.querySelectorAll(".fade-in-section");
+const revealElements = document.querySelectorAll(".reveal-up");
+
+revealElements.forEach((element) => {
+  const delay = element.getAttribute("data-reveal-delay");
+  if (delay) {
+    element.style.setProperty("--reveal-delay", `${delay}ms`);
+  }
+});
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
@@ -18,12 +23,12 @@ if ("IntersectionObserver" in window) {
       });
     },
     {
-      threshold: 0.15,
+      rootMargin: "0px 0px -12% 0px",
+      threshold: 0.16,
     }
   );
 
-  animatedSections.forEach((section) => observer.observe(section));
+  revealElements.forEach((element) => observer.observe(element));
 } else {
-  // Fallback para navegadores antigos
-  animatedSections.forEach((section) => section.classList.add("is-visible"));
+  revealElements.forEach((element) => element.classList.add("is-visible"));
 }
