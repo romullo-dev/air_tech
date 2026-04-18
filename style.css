@@ -353,7 +353,7 @@ main {
 }
 
 /* RESPONSIVO */
-@media (max-width: 991.98px) {
+@media (max-width: 991.90px) {
   .section-spacing {
     padding: 5rem 0;
   }
@@ -362,7 +362,7 @@ main {
     font-size: 0.95rem;
   }
 
-  @media (max-width: 991.98px) {
+  @media (max-width: 991.90px) {
 
     .hero-section,
     .hero-section-bg {
