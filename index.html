@@ -12,6 +12,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.ico">
 </head>
 
 <body>
@@ -46,27 +47,38 @@
   </header>
 
   <main>
-    <section id="inicio" class="hero-section d-flex align-items-center text-white">
-      <div class="container py-5">
+    <section id="inicio" class="hero-section hero-section-bg d-flex align-items-center text-white">
+      <div class="container py-5 position-relative">
         <div class="row align-items-center gy-5">
+
           <div class="col-lg-7 reveal-up" data-reveal-delay="0">
             <span class="hero-kicker">Projetos HVAC de alta performance</span>
-            <h1 class="display-3 fw-bold mt-3 mb-3">Conforto térmico premium para ambientes que exigem resultado.</h1>
-            <p class="hero-lead mb-4">Engenharia aplicada em instalação, manutenção e consultoria com foco em
-              eficiência, durabilidade e experiência do cliente.</p>
+
+            <h1 class="display-3 fw-bold mt-3 mb-3">
+              Conforto térmico premium para ambientes que exigem resultado.
+            </h1>
+
+            <p class="hero-lead mb-4">
+              Engenharia aplicada em instalação, manutenção e consultoria com foco em
+              eficiência, durabilidade e experiência do cliente.
+            </p>
+
             <div class="d-flex flex-wrap gap-3">
               <a class="btn btn-success btn-lg px-5 py-3 btn-premium" href="https://wa.me/5561982120531" target="_blank"
-                rel="noopener noreferrer">Solicitar orçamento</a>
-              <a class="btn btn-outline-light btn-lg px-4 py-3 btn-premium" href="#servicos">Ver serviços</a>
+                rel="noopener noreferrer">
+                Solicitar orçamento
+              </a>
+
+              <a class="btn btn-outline-light btn-lg px-4 py-3 btn-premium" href="#servicos">
+                Ver serviços
+              </a>
             </div>
           </div>
-          <div class="col-lg-5 reveal-up" data-reveal-delay="120">
 
-            <div class="hero-img-container">
-              <img src="assets/foto_01.png" alt="Equipe Air Tech Solutions" class="hero-img">
-            </div>
-
+          <div class="col-lg-5 d-none d-lg-flex justify-content-center align-items-center">
+            <img src="assets/foto_logo.png" alt="Air Tech Solutions Engenharia" class="hero-logo-img">
           </div>
+
         </div>
       </div>
     </section>
@@ -84,7 +96,9 @@
         <div class="row g-4">
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="40">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
-              <div class="card-media-slot">Foto do serviço</div>
+              <div class="card-media-slot">
+                <img src="assets/foto_Instalacao.png" alt="Instalação de ar-condicionado" class="img-servico">
+              </div>
               <div class="card-body p-4">
                 <i class="bi bi-tools service-icon"></i>
                 <h3 class="h5 mt-3">Instalação</h3>
@@ -95,7 +109,10 @@
 
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="80">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
-              <div class="card-media-slot">Foto do serviço</div>
+              <div class="card-media-slot">
+                <img src="assets/foto_Manutencao.png" alt="Manutenção de ar-condicionado"
+                  class="img-servico manutencao-img">
+              </div>
               <div class="card-body p-4">
                 <i class="bi bi-wrench-adjustable-circle service-icon"></i>
                 <h3 class="h5 mt-3">Manutenção</h3>
@@ -107,7 +124,10 @@
 
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="120">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
-              <div class="card-media-slot">Foto do serviço</div>
+              <div class="card-media-slot">
+                <img src="assets/foto_Tecnica.png" alt="Consultoria técnica em climatização"
+                  class="img-servico consultoria-img">
+              </div>
               <div class="card-body p-4">
                 <i class="bi bi-clipboard2-data service-icon"></i>
                 <h3 class="h5 mt-3">Consultoria Técnica</h3>
@@ -118,7 +138,9 @@
 
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="40">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
-              <div class="card-media-slot">Foto do serviço</div>
+              <div class="card-media-slot">
+                <img src="assets/foto_HVAC.png" alt="HVAC" class="img-servico consultoria-img">
+              </div>
               <div class="card-body p-4">
                 <i class="bi bi-building-gear service-icon"></i>
                 <h3 class="h5 mt-3">Projetos HVAC</h3>
@@ -129,7 +151,9 @@
 
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="80">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
-              <div class="card-media-slot">Foto do serviço</div>
+              <div class="card-media-slot">
+                <img src="assets/PMOC.png" alt="PMOC" class="img-servico consultoria-img">
+              </div>
               <div class="card-body p-4">
                 <i class="bi bi-shield-check service-icon"></i>
                 <h3 class="h5 mt-3">PMOC</h3>
@@ -140,7 +164,9 @@
 
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="120">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
-              <div class="card-media-slot">Foto do serviço</div>
+              <div class="card-media-slot">
+                <img src="assets/foto_Infraestrutura.png" alt="Infraestrutura" class="img-servico consultoria-img">
+              </div>
               <div class="card-body p-4">
                 <i class="bi bi-diagram-3 service-icon"></i>
                 <h3 class="h5 mt-3">Infraestrutura</h3>
@@ -212,6 +238,14 @@
       <p class="mb-1">Contato:airtechsolutionsengineering@gmail.com | +55 (61) 98212-0531</p>
       <p class="mb-0">&copy; <span id="currentYear"></span> Air Tech Solutions Engineering. Todos os direitos
         reservados.</p>
+
+      <p class="mb-0 small" style="opacity: 0.3;">
+        Desenvolvido por
+        <a href="https://romullo-dev.github.io/portifolio/" target="_blank"
+          style="color:#4fd1c5; text-decoration:none;">
+          Rômulo França
+        </a>
+      </p>
     </div>
   </footer>
 

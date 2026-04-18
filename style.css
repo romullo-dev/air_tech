@@ -13,6 +13,10 @@
   --shadow: 0 20px 45px rgba(7, 26, 42, 0.12);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -23,19 +27,23 @@ body {
   background: var(--surface);
   line-height: 1.65;
   letter-spacing: -0.01em;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-  margin-top: 80px;
+  margin-top: 0;
 }
 
 .section-spacing {
   padding: 6.5rem 0;
 }
 
+/* NAVBAR */
 #mainNavbar {
   background: rgba(7, 26, 42, 0.86);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .logo-slot {
@@ -49,6 +57,17 @@ main {
   font-size: 0.8rem;
   font-weight: 600;
   color: #e4f2ff;
+}
+
+.logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .nav-link {
@@ -74,27 +93,85 @@ main {
   transform: scaleX(1);
 }
 
+/* HERO */
+/* HERO BASE */
 .hero-section {
   min-height: calc(100vh - 80px);
-  background: radial-gradient(circle at 85% 8%, #2d90c8 0%, rgba(45, 144, 200, 0) 38%),
-    linear-gradient(130deg, #071a2a 2%, #0e4165 52%, #1479b2 100%);
+  display: flex;
+  align-items: center;
 }
 
+/* FUNDO + GRADIENTE */
+.hero-section-bg {
+  min-height: max(calc(100vh - 80px), 850px);
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(90deg,
+      rgba(5, 25, 40, 0.95) 0%,
+      rgba(5, 25, 40, 0.90) 30%,
+      rgba(5, 25, 40, 0.65) 55%,
+      rgba(5, 25, 40, 0.25) 75%,
+      rgba(5, 25, 40, 0.05) 100%),
+    url("assets/imagem_fundo.png") center / cover no-repeat;
+}
+
+/* CONTAINER */
+.hero-section-bg .container {
+  position: relative;
+  z-index: 2;
+  padding-top: 140px;
+  padding-bottom: 180px;
+}
+
+/* TEXTO */
+.hero-section-bg h1 {
+  max-width: 700px;
+  line-height: 1.05;
+  color: #fff;
+}
+
+/* SUBTEXTO */
+.hero-lead {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.15rem;
+}
+
+/* BADGE */
 .hero-kicker {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.45rem 0.9rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.5rem 1rem;
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 600;
+  color: #fff;
+  backdrop-filter: blur(6px);
 }
 
-.hero-lead {
-  max-width: 58ch;
-  color: rgba(255, 255, 255, 0.92);
+/* LOGO DIREITA */
+.hero-logo-img {
+  max-width: 980px;
+  width: 225%;
+  height: auto;
+
+  opacity: 0.95;
+
+  filter:
+    drop-shadow(0 30px 80px rgba(0, 150, 255, 0.25)) drop-shadow(0 0 50px rgba(0, 200, 255, 0.15));
+
+  transition: transform 0.4s ease;
 }
 
+/* ANIMAÇÃO SUAVE */
+.hero-logo-img:hover {
+  transform: scale(1.03);
+}
+
+/* PLACEHOLDER GENÉRICO */
 .media-slot {
   min-height: 280px;
   border: 1px dashed rgba(255, 255, 255, 0.5);
@@ -106,6 +183,7 @@ main {
   padding: 1.4rem;
 }
 
+/* SEÇÕES */
 .section-title {
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -121,6 +199,7 @@ main {
   background: var(--surface-soft);
 }
 
+/* CARDS */
 .service-card {
   overflow: hidden;
   border: 1px solid var(--border);
@@ -128,7 +207,10 @@ main {
 }
 
 .card-media-slot {
-  min-height: 135px;
+  height: 220px;
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   background: linear-gradient(135deg, #c7deef, #e8f0f8);
   border-bottom: 1px dashed #7fa2bc;
   color: #31546d;
@@ -136,6 +218,14 @@ main {
   font-size: 0.95rem;
   display: grid;
   place-content: center;
+}
+
+.img-servico {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  transition: transform 0.4s ease;
 }
 
 .service-icon,
@@ -150,6 +240,10 @@ main {
   border-color: rgba(14, 110, 168, 0.25);
 }
 
+.service-card:hover .img-servico {
+  transform: scale(1.05);
+}
+
 .highlight-box {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -161,6 +255,7 @@ main {
   box-shadow: 0 16px 36px rgba(7, 26, 42, 0.11);
 }
 
+/* CTA */
 .cta-section {
   background: linear-gradient(120deg, #071a2a, #0d4f78);
 }
@@ -171,10 +266,12 @@ main {
   color: rgba(255, 255, 255, 0.92);
 }
 
+/* FOOTER */
 .footer-section {
   background-color: #04111d;
 }
 
+/* BOTÕES */
 .btn-premium {
   position: relative;
   overflow: hidden;
@@ -204,6 +301,7 @@ main {
   left: 110%;
 }
 
+/* WHATSAPP */
 .whatsapp-float {
   position: fixed;
   right: 20px;
@@ -229,6 +327,7 @@ main {
   box-shadow: 0 18px 28px rgba(0, 0, 0, 0.3);
 }
 
+/* ANIMAÇÃO */
 .reveal-up {
   opacity: 0;
   transform: translateY(26px) scale(0.99);
@@ -241,38 +340,9 @@ main {
   transform: translateY(0) scale(1);
 }
 
-.logo {
-    height: 42px;
-    width: auto;
-    object-fit: contain;
-    transition: 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.05);
-}
-
-.hero-img-container {
-    position: relative;
-    width: 100%;
-    max-width: 480px;
-    margin-left: auto;
-}
-
-.hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-
-    /* visual premium */
-    box-shadow: 0 30px 80px rgba(0,0,0,0.35);
-
-    /* efeito fade moderno */
-    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-}
-
+/* ACESSIBILIDADE */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -282,6 +352,7 @@ main {
   }
 }
 
+/* RESPONSIVO */
 @media (max-width: 991.98px) {
   .section-spacing {
     padding: 5rem 0;
@@ -291,9 +362,39 @@ main {
     font-size: 0.95rem;
   }
 
-  .hero-section {
-    min-height: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  @media (max-width: 991.98px) {
+
+    .hero-section,
+    .hero-section-bg {
+      min-height: auto;
+    }
+
+    .hero-section-bg {
+      padding-top: 50px;
+      background:
+        linear-gradient(180deg,
+          rgba(7, 26, 42, 0.95) 0%,
+          rgba(7, 26, 42, 0.88) 45%,
+          rgba(7, 26, 42, 0.45) 100%),
+        url("assets/imagem_fundo.png") center / cover no-repeat;
+    }
+
+    .hero-section-bg .container {
+      padding-top: 90px;
+      padding-bottom: 110px;
+    }
+
+    .hero-section-bg h1 {
+      font-size: clamp(2.2rem, 7vw, 3.2rem);
+    }
+
+    .hero-lead {
+      font-size: 1rem;
+    }
+
+    /* esconde logo no mobile */
+    .hero-logo-img {
+      display: none;
+    }
   }
 }
