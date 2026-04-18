@@ -11,6 +11,8 @@
   --muted: #5b6e7d;
   --border: rgba(15, 36, 51, 0.11);
   --shadow: 0 20px 45px rgba(7, 26, 42, 0.12);
+  --navbar-height: 82px;
+  --fab-offset: 24px;
 }
 
 * {
@@ -35,6 +37,10 @@ main {
   margin-top: 0;
 }
 
+section[id] {
+  scroll-margin-top: calc(var(--navbar-height) + 14px);
+}
+
 .section-spacing {
   padding: 6.5rem 0;
 }
@@ -44,19 +50,6 @@ main {
   background: rgba(7, 26, 42, 0.86);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-
-.logo-slot {
-  min-width: 88px;
-  height: 38px;
-  border-radius: 10px;
-  border: 1px dashed rgba(255, 255, 255, 0.55);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #e4f2ff;
 }
 
 .logo {
@@ -94,52 +87,46 @@ main {
 }
 
 /* HERO */
-/* HERO BASE */
 .hero-section {
-  min-height: calc(100vh - 80px);
+  position: relative;
+  min-height: max(calc(100dvh - var(--navbar-height)), 760px);
+  padding-top: var(--navbar-height);
   display: flex;
   align-items: center;
 }
 
-/* FUNDO + GRADIENTE */
 .hero-section-bg {
-  min-height: max(calc(100vh - 80px), 850px);
   position: relative;
   overflow: hidden;
-
   background:
     linear-gradient(90deg,
       rgba(5, 25, 40, 0.95) 0%,
-      rgba(5, 25, 40, 0.90) 30%,
+      rgba(5, 25, 40, 0.9) 30%,
       rgba(5, 25, 40, 0.65) 55%,
       rgba(5, 25, 40, 0.25) 75%,
       rgba(5, 25, 40, 0.05) 100%),
     url("assets/imagem_fundo.png") center / cover no-repeat;
 }
 
-/* CONTAINER */
 .hero-section-bg .container {
   position: relative;
   z-index: 2;
-  padding-top: 140px;
-  padding-bottom: 180px;
+  padding-top: 2.25rem;
+  padding-bottom: 5rem;
 }
 
-/* TEXTO */
 .hero-section-bg h1 {
   max-width: 700px;
   line-height: 1.05;
   color: #fff;
 }
 
-/* SUBTEXTO */
 .hero-lead {
   max-width: 600px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.15rem;
 }
 
-/* BADGE */
 .hero-kicker {
   display: inline-block;
   background: rgba(255, 255, 255, 0.08);
@@ -152,35 +139,19 @@ main {
   backdrop-filter: blur(6px);
 }
 
-/* LOGO DIREITA */
 .hero-logo-img {
   max-width: 980px;
   width: 225%;
   height: auto;
-
   opacity: 0.95;
-
   filter:
-    drop-shadow(0 30px 80px rgba(0, 150, 255, 0.25)) drop-shadow(0 0 50px rgba(0, 200, 255, 0.15));
-
+    drop-shadow(0 30px 80px rgba(0, 150, 255, 0.25))
+    drop-shadow(0 0 50px rgba(0, 200, 255, 0.15));
   transition: transform 0.4s ease;
 }
 
-/* ANIMAÇÃO SUAVE */
 .hero-logo-img:hover {
   transform: scale(1.03);
-}
-
-/* PLACEHOLDER GENÉRICO */
-.media-slot {
-  min-height: 280px;
-  border: 1px dashed rgba(255, 255, 255, 0.5);
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.1));
-  color: #f2f9ff;
-  display: grid;
-  place-content: center;
-  padding: 1.4rem;
 }
 
 /* SEÇÕES */
@@ -269,6 +240,7 @@ main {
 /* FOOTER */
 .footer-section {
   background-color: #04111d;
+  padding-bottom: calc(1.5rem + var(--fab-offset));
 }
 
 /* BOTÕES */
@@ -304,8 +276,8 @@ main {
 /* WHATSAPP */
 .whatsapp-float {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: var(--fab-offset);
+  bottom: var(--fab-offset);
   width: 58px;
   height: 58px;
   border-radius: 50%;
@@ -340,20 +312,12 @@ main {
   transform: translateY(0) scale(1);
 }
 
-/* ACESSIBILIDADE */
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* RESPONSIVO */
+/* TABLET E ABAIXO */
 @media (max-width: 991.98px) {
+  :root {
+    --navbar-height: 74px;
+  }
+
   .section-spacing {
     padding: 5rem 0;
   }
@@ -362,39 +326,179 @@ main {
     font-size: 0.95rem;
   }
 
-  @media (max-width: 991.98px) {
+  #navbarContent {
+    margin-top: 0.6rem;
+    padding: 0.5rem 0;
+    background: rgba(7, 26, 42, 0.95);
+    border-radius: 0.75rem;
+  }
 
-    .hero-section,
-    .hero-section-bg {
-      min-height: auto;
-    }
+  .hero-section {
+    min-height: max(78svh, 620px);
+  }
 
-    .hero-section-bg {
-      padding-top: 50px;
-      background:
-        linear-gradient(180deg,
-          rgba(7, 26, 42, 0.95) 0%,
-          rgba(7, 26, 42, 0.88) 45%,
-          rgba(7, 26, 42, 0.45) 100%),
-        url("assets/imagem_fundo.png") center / cover no-repeat;
-    }
+  .hero-section-bg {
+    background:
+      linear-gradient(180deg,
+        rgba(7, 26, 42, 0.95) 0%,
+        rgba(7, 26, 42, 0.88) 45%,
+        rgba(7, 26, 42, 0.45) 100%),
+      url("assets/imagem_fundo.png") center / cover no-repeat;
+  }
 
-    .hero-section-bg .container {
-      padding-top: 90px;
-      padding-bottom: 110px;
-    }
+  .hero-section-bg .container {
+    padding-top: 1.75rem;
+    padding-bottom: 3.5rem;
+  }
 
-    .hero-section-bg h1 {
-      font-size: clamp(2.2rem, 7vw, 3.2rem);
-    }
+  .hero-section-bg h1 {
+    font-size: clamp(2rem, 6.8vw, 3rem);
+  }
 
-    .hero-lead {
-      font-size: 1rem;
-    }
+  .hero-lead {
+    font-size: 1rem;
+    max-width: 100%;
+  }
 
-    /* esconde logo no mobile */
-    .hero-logo-img {
-      display: none;
-    }
+  .card-media-slot {
+    height: 190px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767.98px) {
+  :root {
+    --navbar-height: 70px;
+    --fab-offset: 14px;
+  }
+
+  .section-spacing {
+    padding: 4rem 0;
+  }
+
+  .navbar .container {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .navbar-brand {
+    max-width: calc(100% - 64px);
+    gap: 0.5rem !important;
+  }
+
+  .navbar-brand span:last-child {
+    font-size: 0.84rem;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .logo {
+    height: 34px;
+  }
+
+  #navbarContent {
+    padding: 0.45rem 0.7rem;
+  }
+
+  .hero-section {
+    min-height: max(86svh, 580px);
+    align-items: flex-start;
+  }
+
+  .hero-section-bg .container {
+    padding-top: 1.2rem;
+    padding-bottom: 2.4rem;
+  }
+
+  .hero-section .row {
+    gap: 0.8rem;
+  }
+
+  .hero-section-bg h1 {
+    font-size: clamp(1.7rem, 8vw, 2.35rem);
+    line-height: 1.16;
+    margin-bottom: 0.9rem !important;
+  }
+
+  .hero-kicker {
+    font-size: 0.78rem;
+    padding: 0.42rem 0.85rem;
+  }
+
+  .hero-lead {
+    font-size: 0.96rem;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-section .btn-lg {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.1rem !important;
+    font-size: 0.98rem;
+  }
+
+  .hero-logo-img {
+    display: none;
+  }
+
+  #servicos .row.g-4,
+  #diferenciais .row.g-4 {
+    --bs-gutter-y: 1rem;
+  }
+
+  .card-media-slot {
+    height: 170px;
+  }
+
+  .service-card .card-body {
+    padding: 1.15rem !important;
+  }
+
+  .highlight-box {
+    padding: 1.2rem !important;
+  }
+
+  .cta-section .btn-lg {
+    width: 100%;
+  }
+
+  .footer-section {
+    padding-bottom: calc(1.2rem + 54px);
+  }
+
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    font-size: 1.45rem;
+  }
+}
+
+/* TELAS MUITO PEQUENAS */
+@media (max-width: 420px) {
+  .navbar-brand span:last-child {
+    font-size: 0.78rem;
+  }
+
+  .hero-section {
+    min-height: 90svh;
+  }
+
+  .hero-section-bg h1 {
+    font-size: clamp(1.55rem, 8.5vw, 2rem);
+  }
+
+  .card-media-slot {
+    height: 156px;
+  }
+}
+
+/* ACESSIBILIDADE */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
