@@ -30,6 +30,7 @@ body {
   letter-spacing: -0.01em;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 main {
@@ -251,8 +252,8 @@ section {
   overflow: hidden;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  background: linear-gradient(135deg, #c7deef, #e8f0f8);
-  border-bottom: 1px dashed #7fa2bc;
+  background: #dce8f4;
+  border-bottom: 1px solid rgba(14, 110, 168, 0.15);
   color: #31546d;
   font-weight: 600;
   font-size: 0.95rem;
@@ -503,6 +504,11 @@ section {
     padding-bottom: 0.7rem;
   }
 
+  #mainNavbar .container {
+    max-width: 100%;
+    padding-inline: 0.75rem;
+  }
+
   .navbar-brand {
     gap: 0.75rem;
     max-width: calc(100% - 72px);
@@ -522,6 +528,12 @@ section {
 
   .navbar-toggler {
     padding: 0.55rem 0.75rem;
+  }
+
+  .navbar-collapse {
+    border-radius: 0.65rem;
+    margin-top: 0.6rem;
+    padding: 0.65rem;
   }
 
   .hero-section,
@@ -558,7 +570,8 @@ section {
   }
 
   .service-card .card-media-slot {
-    height: 210px;
+    height: 205px;
+    border-bottom: 0;
   }
 
   .card img {
