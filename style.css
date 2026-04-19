@@ -354,11 +354,12 @@ main {
 /* TABLET E MOBILE */
 @media (max-width: 991.98px) {
   .section-spacing {
-    padding: 5rem 0;
+    padding: 4rem 0;
   }
 
   .navbar-brand span:last-child {
     font-size: 0.95rem;
+    line-height: 1.2;
   }
 
   .hero-section,
@@ -367,7 +368,7 @@ main {
   }
 
   .hero-section-bg {
-    padding-top: 110px; /* compensação do header */
+    padding-top: 110px;
     background:
       linear-gradient(
         180deg,
@@ -379,32 +380,67 @@ main {
   }
 
   .hero-section-bg .container {
-    padding-top: 1rem;
-    padding-bottom: 4rem;
+    padding-top: 0;
+    padding-bottom: 3rem;
   }
 
   .hero-section-bg h1 {
-    font-size: clamp(2.2rem, 7vw, 3.2rem);
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    line-height: 1.15;
   }
 
-  .hero-lead {
+  .hero-lead,
+  .hero-section p {
     font-size: 1rem;
+    line-height: 1.6;
   }
 
   .hero-logo-img {
     display: none;
   }
+
+  .card {
+    border-radius: 22px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .card img {
+    width: 100%;
+    height: clamp(220px, 32vw, 320px);
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .card-body {
+    padding: 1.5rem 1.35rem;
+  }
+
+  .card-title {
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-text {
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
 }
 
 /* CELULAR */
 @media (max-width: 575.98px) {
+  body {
+    padding-top: 88px;
+  }
+
   .section-spacing {
     padding: 2.5rem 0 5.5rem;
   }
 
   .navbar {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
   }
 
   .navbar-brand {
@@ -431,8 +467,12 @@ main {
   .hero-section,
   .hero-section-bg {
     min-height: auto;
-    padding-top: 96px; /* espaço para o menu fixo */
+    padding-top: 0;
     padding-bottom: 1rem;
+  }
+
+  .hero-section-bg {
+    padding-top: 1.5rem;
   }
 
   .hero-section-bg .container {
@@ -442,7 +482,7 @@ main {
 
   .hero-section-bg h1 {
     font-size: 1.9rem;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: 1rem;
   }
 
@@ -450,36 +490,25 @@ main {
   .hero-section p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 0.75rem;
-  }
-
-  .card {
-    border-radius: 22px;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.85rem;
   }
 
   .card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
+    height: clamp(220px, 52vw, 290px);
   }
 
   .card-body {
-    padding: 1.4rem 1.2rem;
+    padding: 1.35rem 1.15rem;
   }
 
   .card-title {
     font-size: 1.5rem;
     line-height: 1.3;
-    margin-bottom: 0.75rem;
   }
 
   .card-text {
     font-size: 1rem;
     line-height: 1.65;
-    margin-bottom: 0;
   }
 
   .whatsapp-float {
@@ -492,8 +521,62 @@ main {
 
   .whatsapp-float i,
   .whatsapp-float svg {
-    font-size: 1.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    font-size: 1.45rem;
+    width: 1.45rem;
+    height: 1.45rem;
+  }
+}
+
+/* CELULARES MAIORES */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  body {
+    padding-top: 92px;
+  }
+
+  .section-spacing {
+    padding: 3rem 0 5.5rem;
+  }
+
+  .hero-section-bg {
+    padding-top: 2rem;
+  }
+
+  .hero-section-bg .container {
+    padding-bottom: 2rem;
+  }
+
+  .hero-section-bg h1 {
+    font-size: 2.2rem;
+    line-height: 1.15;
+  }
+
+  .hero-lead,
+  .hero-section p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .card img {
+    height: clamp(260px, 40vw, 320px);
+  }
+
+  .card-body {
+    padding: 1.5rem 1.35rem;
+  }
+
+  .card-title {
+    font-size: 1.65rem;
+  }
+
+  .card-text {
+    font-size: 1.02rem;
+  }
+
+  .whatsapp-float {
+    width: 54px;
+    height: 54px;
+    right: 14px;
+    bottom: 14px;
+    z-index: 1000;
   }
 }
