@@ -16,6 +16,7 @@
 </head>
 
 <body>
+  <a href="#inicio" class="skip-link">Pular para o conteúdo principal</a>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" id="mainNavbar">
       <div class="container">
@@ -47,14 +48,15 @@
   </header>
 
   <main>
-    <section id="inicio" class="hero-section hero-section-bg d-flex align-items-center text-white">
+    <section id="inicio" class="hero-section hero-section-bg d-flex align-items-center text-white"
+      aria-labelledby="hero-title">
       <div class="container py-5 position-relative">
         <div class="row align-items-center gy-5">
 
           <div class="col-lg-7 reveal-up" data-reveal-delay="0">
             <span class="hero-kicker">Projetos HVAC de alta performance</span>
 
-            <h1 class="display-3 fw-bold mt-3 mb-3">
+            <h1 id="hero-title" class="display-3 fw-bold mt-3 mb-3">
               Conforto térmico premium para ambientes que exigem resultado.
             </h1>
 
@@ -83,11 +85,11 @@
       </div>
     </section>
 
-    <section id="servicos" class="section-spacing bg-light-section">
+    <section id="servicos" class="section-spacing bg-light-section" aria-labelledby="servicos-title">
       <div class="container">
         <div class="row mb-5">
           <div class="col-lg-8 mx-auto text-center reveal-up" data-reveal-delay="0">
-            <h2 class="section-title">Serviços especializados</h2>
+            <h2 id="servicos-title" class="section-title">Serviços especializados</h2>
             <p class="section-subtitle">Soluções completas para reduzir custo operacional, elevar conforto e proteger
               sua operação.</p>
           </div>
@@ -97,7 +99,8 @@
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="40">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
               <div class="card-media-slot">
-                <img src="assets/foto_Instalacao.png" alt="Instalação de ar-condicionado" class="img-servico">
+                <img src="assets/foto_Instalacao.png" alt="Instalação de ar-condicionado" class="img-servico"
+                  loading="lazy" decoding="async">
               </div>
               <div class="card-body p-4">
                 <i class="bi bi-tools service-icon"></i>
@@ -111,7 +114,7 @@
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
               <div class="card-media-slot">
                 <img src="assets/foto_Manutencao.png" alt="Manutenção de ar-condicionado"
-                  class="img-servico manutencao-img">
+                  class="img-servico manutencao-img" loading="lazy" decoding="async">
               </div>
               <div class="card-body p-4">
                 <i class="bi bi-wrench-adjustable-circle service-icon"></i>
@@ -126,7 +129,7 @@
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
               <div class="card-media-slot">
                 <img src="assets/foto_Tecnica.png" alt="Consultoria técnica em climatização"
-                  class="img-servico consultoria-img">
+                  class="img-servico consultoria-img" loading="lazy" decoding="async">
               </div>
               <div class="card-body p-4">
                 <i class="bi bi-clipboard2-data service-icon"></i>
@@ -139,7 +142,8 @@
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="40">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
               <div class="card-media-slot">
-                <img src="assets/foto_HVAC.png" alt="HVAC" class="img-servico consultoria-img">
+                <img src="assets/foto_HVAC.png" alt="HVAC" class="img-servico consultoria-img" loading="lazy"
+                  decoding="async">
               </div>
               <div class="card-body p-4">
                 <i class="bi bi-building-gear service-icon"></i>
@@ -152,7 +156,8 @@
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="80">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
               <div class="card-media-slot">
-                <img src="assets/PMOC.png" alt="PMOC" class="img-servico consultoria-img">
+                <img src="assets/PMOC.png" alt="PMOC" class="img-servico consultoria-img" loading="lazy"
+                  decoding="async">
               </div>
               <div class="card-body p-4">
                 <i class="bi bi-shield-check service-icon"></i>
@@ -165,7 +170,8 @@
           <div class="col-sm-6 col-lg-4 reveal-up" data-reveal-delay="120">
             <article class="card service-card h-100 border-0 rounded-4 shadow-sm">
               <div class="card-media-slot">
-                <img src="assets/foto_Infraestrutura.png" alt="Infraestrutura" class="img-servico consultoria-img">
+                <img src="assets/foto_Infraestrutura.png" alt="Infraestrutura" class="img-servico consultoria-img"
+                  loading="lazy" decoding="async">
               </div>
               <div class="card-body p-4">
                 <i class="bi bi-diagram-3 service-icon"></i>
@@ -178,11 +184,11 @@
       </div>
     </section>
 
-    <section id="diferenciais" class="section-spacing">
+    <section id="diferenciais" class="section-spacing" aria-labelledby="diferenciais-title">
       <div class="container">
         <div class="row mb-5">
           <div class="col-lg-8 mx-auto text-center reveal-up">
-            <h2 class="section-title">Por que escolher a Air Tech</h2>
+            <h2 id="diferenciais-title" class="section-title">Por que escolher a Air Tech</h2>
             <p class="section-subtitle">Hierarquia técnica, atendimento próximo e execução previsível para conversão em
               contratos de longo prazo.</p>
           </div>
@@ -235,7 +241,9 @@
   <footer id="contato" class="footer-section py-4 text-white">
     <div class="container text-center">
       <p class="fw-semibold mb-1">Air Tech Solutions Engineering</p>
-      <p class="mb-1">Contato:airtechsolutionsengineering@gmail.com | +55 (61) 98212-0531</p>
+      <p class="mb-1">Contato: <a href="mailto:airtechsolutionsengineering@gmail.com"
+          class="footer-link">airtechsolutionsengineering@gmail.com</a> | <a href="tel:+5561982120531"
+          class="footer-link">+55 (61) 98212-0531</a></p>
       <p class="mb-0">&copy; <span id="currentYear"></span> Air Tech Solutions Engineering. Todos os direitos
         reservados.</p>
 

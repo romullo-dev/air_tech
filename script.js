@@ -32,3 +32,16 @@ if ("IntersectionObserver" in window) {
 } else {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
+
+const navbarCollapse = document.getElementById("navbarContent");
+if (navbarCollapse) {
+  const navLinks = navbarCollapse.querySelectorAll(".nav-link, .btn");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 992 && navbarCollapse.classList.contains("show")) {
+        const collapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+        collapse.hide();
+      }
+    });
+  });
+}

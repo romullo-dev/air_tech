@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 92px;
 }
 
 body {
@@ -29,10 +30,15 @@ body {
   letter-spacing: -0.01em;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 main {
   margin-top: 0;
+}
+
+section {
+  scroll-margin-top: 92px;
 }
 
 .section-spacing {
@@ -75,6 +81,16 @@ main {
   font-weight: 500;
 }
 
+.nav-link:focus-visible,
+.btn:focus-visible,
+.navbar-toggler:focus-visible,
+.whatsapp-float:focus-visible,
+.footer-link:focus-visible {
+  outline: 3px solid rgba(79, 209, 197, 0.75);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
 .nav-link::after {
   content: "";
   position: absolute;
@@ -91,6 +107,30 @@ main {
 .nav-link:hover::after,
 .nav-link:focus-visible::after {
   transform: scaleX(1);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  z-index: 2000;
+  background: #fff;
+  color: #071a2a;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0.45rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 /* HERO */
@@ -130,6 +170,7 @@ main {
   max-width: 700px;
   line-height: 1.05;
   color: #fff;
+  text-wrap: balance;
 }
 
 /* SUBTEXTO */
@@ -211,8 +252,8 @@ main {
   overflow: hidden;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  background: linear-gradient(135deg, #c7deef, #e8f0f8);
-  border-bottom: 1px dashed #7fa2bc;
+  background: #dce8f4;
+  border-bottom: 1px solid rgba(14, 110, 168, 0.15);
   color: #31546d;
   font-weight: 600;
   font-size: 0.95rem;
@@ -269,6 +310,15 @@ main {
 /* FOOTER */
 .footer-section {
   background-color: #04111d;
+}
+
+.footer-link {
+  color: #8fdcff;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
 }
 
 /* BOTÕES */
@@ -362,6 +412,13 @@ main {
     line-height: 1.2;
   }
 
+  .navbar-collapse {
+    background: rgba(5, 25, 40, 0.95);
+    border-radius: 0.75rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+  }
+
   .hero-section,
   .hero-section-bg {
     min-height: auto;
@@ -426,6 +483,10 @@ main {
     line-height: 1.65;
     margin-bottom: 0;
   }
+
+  .hero-section .btn {
+    width: 100%;
+  }
 }
 
 /* CELULAR */
@@ -443,6 +504,11 @@ main {
     padding-bottom: 0.7rem;
   }
 
+  #mainNavbar .container {
+    max-width: 100%;
+    padding-inline: 0.75rem;
+  }
+
   .navbar-brand {
     gap: 0.75rem;
     max-width: calc(100% - 72px);
@@ -456,12 +522,18 @@ main {
   }
 
   .navbar-brand span:last-child {
-    font-size: 1rem;
+    font-size: 0.88rem;
     line-height: 1.2;
   }
 
   .navbar-toggler {
     padding: 0.55rem 0.75rem;
+  }
+
+  .navbar-collapse {
+    border-radius: 0.65rem;
+    margin-top: 0.6rem;
+    padding: 0.65rem;
   }
 
   .hero-section,
@@ -491,6 +563,15 @@ main {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 0.85rem;
+  }
+
+  .hero-kicker {
+    font-size: 0.78rem;
+  }
+
+  .service-card .card-media-slot {
+    height: 205px;
+    border-bottom: 0;
   }
 
   .card img {
@@ -554,6 +635,10 @@ main {
   .hero-section p {
     font-size: 1.05rem;
     line-height: 1.65;
+  }
+
+  .service-card .card-media-slot {
+    height: 240px;
   }
 
   .card img {
