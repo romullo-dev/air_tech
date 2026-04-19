@@ -354,7 +354,7 @@ main {
 /* RESPONSIVO */
 @media (max-width: 991.98px) {
   .section-spacing {
-    padding: 5rem 0;
+    padding: 7rem 0;
   }
 
   .navbar-brand span:last-child {
@@ -398,7 +398,7 @@ main {
 
 @media (max-width: 575.98px) {
   .section-spacing {
-    padding: 2.5rem 0;
+    padding: 4.5rem 0;
   }
 
   .navbar {
