@@ -30,7 +30,6 @@ body {
   letter-spacing: -0.01em;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 main {
@@ -245,6 +244,7 @@ section {
   overflow: hidden;
   border: 1px solid var(--border);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  isolation: auto;
 }
 
 .card-media-slot {
@@ -487,6 +487,19 @@ section {
   .hero-section .btn {
     width: 100%;
   }
+
+  .card-media-slot {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .img-servico {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+  }
 }
 
 /* CELULAR */
@@ -592,12 +605,13 @@ section {
     line-height: 1.65;
   }
 
+  /* FIX: acima do navbar Bootstrap (1030) e dos cards com transform */
   .whatsapp-float {
     width: 50px;
     height: 50px;
-    right: 12px;
-    bottom: 12px;
-    z-index: 1000;
+    right: 16px;
+    bottom: 20px;
+    z-index: 1060 !important;
   }
 
   .whatsapp-float i,
@@ -657,11 +671,12 @@ section {
     font-size: 1.02rem;
   }
 
+  /* FIX: acima do navbar Bootstrap (1030) e dos cards com transform */
   .whatsapp-float {
     width: 54px;
     height: 54px;
-    right: 14px;
-    bottom: 14px;
-    z-index: 1000;
+    right: 16px;
+    bottom: 20px;
+    z-index: 1060 !important;
   }
 }
