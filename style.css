@@ -398,19 +398,74 @@ main {
 
 @media (max-width: 575.98px) {
   .section-spacing {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
+  }
+
+  .navbar {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .navbar-brand img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+
+  .navbar-brand span:last-child {
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  .hero-section,
+  .hero-section-bg {
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 1rem;
   }
 
   .hero-section-bg .container {
-    padding-top: 70px;
-    padding-bottom: 80px;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
   }
 
   .hero-section-bg h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
+    line-height: 1.2;
   }
 
-  .hero-lead {
-    font-size: 0.95rem;
+  .hero-lead,
+  .hero-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-body {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .whatsapp-float {
+    width: 58px;
+    height: 58px;
+    right: 16px;
+    bottom: 16px;
   }
 }
